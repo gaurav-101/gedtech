@@ -12,6 +12,7 @@
     "axios": "^1.3.5",
     "chart.js": "^4.3.0",
     "copy-to-clipboard": "^3.3.3",
+    "cors": "^2.8.5",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
@@ -33,7 +34,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"cd server && npm start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -60,7 +61,7 @@
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
-    "concurrently": "^8.0.1",
+    "concurrently": "^8.2.2",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "tailwindcss": "^3.2.7"

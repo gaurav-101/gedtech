@@ -13,6 +13,8 @@ const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 
+
+
 // Setting up port number
 const PORT = process.env.PORT || 4000;
 
@@ -25,12 +27,23 @@ database.connect();
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-	cors({
-		origin: "*",
-		credentials: true,
-	})
-);
+
+// app.use(
+// 	cors({
+// 		origin: "*",
+// 		credentials: true,
+// 	})
+// );
+
+// const corsConfig = {
+//     origin: ["http://testing.local", "https://my-movie-db-roberto.herokuapp.com", "http://localhost:3000"],
+//     credentials: true,
+//     methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+//     allowedHeaders: ['Content-Type']
+// };
+
+app.use(cors(corsConfig));
+
 app.use(
 	fileUpload({
 		useTempFiles: true,
