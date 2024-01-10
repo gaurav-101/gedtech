@@ -28,21 +28,13 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 
-// app.use(
-// 	cors({
-// 		origin: "*",
-// 		credentials: true,
-// 	})
-// );
+app.use(
+	cors({
+		origin: "*",
+		credentials: true,
+	})
+);
 
-// const corsConfig = {
-//     origin: ["http://testing.local", "https://my-movie-db-roberto.herokuapp.com", "http://localhost:3000"],
-//     credentials: true,
-//     methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
-//     allowedHeaders: ['Content-Type']
-// };
-
-app.use(cors(corsConfig));
 
 app.use(
 	fileUpload({
